@@ -1,6 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Container, Header, Content, Item, Input, Icon } from 'native-base';
+
 import firebase from 'firebase';
+import SignUp from './screens/signUp';
 const config = {
   apiKey: "AIzaSyDZvG2Iss1OMYcvemuVKzLCAeXmLUu7LlI",
   authDomain: "periopet.firebaseapp.com",
@@ -18,9 +21,10 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up Aappppp.js to start working on your app!</Text>
-      </View>
+      <Container>
+        <SignUp/>
+      </Container>
+      
     );
   }
 }
@@ -28,6 +32,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginTop: 50,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
