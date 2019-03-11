@@ -1,13 +1,31 @@
 import React, { Component } from 'react';
 import { View, Text, ImageBackground, StyleSheet } from 'react-native';
 import { Container, Header, Content, Item, Input, Icon, Thumbnail, Button } from 'native-base';
+import firebase from 'firebase';
+
+const config = {
+    apiKey: "AIzaSyDZvG2Iss1OMYcvemuVKzLCAeXmLUu7LlI",
+    authDomain: "periopet.firebaseapp.com",
+    databaseURL: "https://periopet.firebaseio.com",
+    projectId: "periopet",
+    storageBucket: "periopet.appspot.com",
+    messagingSenderId: "200177448749"
+  };
 export default class signUp extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            
         };
     }
-
+    componentWillMount(){
+        firebase.initializeApp(config);
+        firebase.database().ref('users/001').set({
+          name:'ahmet',
+          kullaniciAdi:'abk',
+          sifre:'123'
+        });
+      };
     render() {
         return (
             <ImageBackground
