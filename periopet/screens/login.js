@@ -12,7 +12,7 @@ export default class Login extends Component {
     }
 
 onPressButton(u,p){
-    
+    u = this.state.username
 
 }
 
@@ -29,7 +29,7 @@ onPressButton(u,p){
                 <Content style={{ padding: 8 ,marginTop:'6%'}}>
                     <Form>
                         <Item>
-                            <Input  onChangeText={ (text) => this.setState({username : text})} />
+                            <Input placeholder="E-Mail" onChangeText={ (text) => this.setState({username : text})} />
                         </Item>
                         <Item last>
                             <Input placeholder="Password" />
