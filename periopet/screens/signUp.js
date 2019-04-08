@@ -4,6 +4,7 @@ import { Container, Header, Content, Item, Input, Icon, Thumbnail, Button } from
 import firebase from 'firebase';
 import { Constants, ImagePicker, Permissions } from "expo";
 import uuid from 'uuid';
+
 const config = {
     apiKey: "AIzaSyDZvG2Iss1OMYcvemuVKzLCAeXmLUu7LlI",
     authDomain: "periopet.firebaseapp.com",
@@ -66,13 +67,13 @@ export default class signUp extends Component {
         await Permissions.askAsync(Permissions.CAMERA_ROLL);
         await Permissions.askAsync(Permissions.CAMERA);
     }
-    componentWillMount() {
+   /* componentWillMount() {
         firebase.initializeApp(config);
         console.log('cwm başladı');
         console.log(firebase.database().ref('users').on('value', data => { console.log(data.toJSON()) }));
         console.log('cwm bitti');
 
-    };
+    };*/
     _pickImage = async () => {
         let pickerResult = await ImagePicker.launchImageLibraryAsync();
     
@@ -130,7 +131,7 @@ export default class signUp extends Component {
                 resizeMode='cover'
             >
 
-                <Container style={{ marginTop: 20, backgroundColor: 'transparent' }}>
+                <Container style={{ marginTop: '0%', backgroundColor: 'transparent' }}>
 
                     <Content style={{
                         padding: 20,
